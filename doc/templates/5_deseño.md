@@ -6,6 +6,10 @@
 
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
+![Login Screen](../img/LoginScreen.png)
+
 ## Diagrama de Base de Datos
+
+![E-R](../img/ER.png)
 
 ## Diagrama de compoñentes software que constitúen o produto e de despregue
