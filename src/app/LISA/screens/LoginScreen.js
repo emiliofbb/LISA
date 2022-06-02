@@ -1,6 +1,9 @@
 import React from 'react';
 
-import {useLazyQuery, gql} from '@apollo/client';
+import {
+  useLazyQuery,
+  gql
+} from '@apollo/client';
 
 import {
   View,
@@ -19,12 +22,19 @@ const LOGIN_OK = gql`
 `;
 
 const LoginScreen = ({navigation}) => {
+
   const [textUsername, setTextUsername] = React.useState(null);
   const [textPassword, setTextPassword] = React.useState(null);
   const [haveError, setError] = React.useState(false);
 
   const [tryLogin, {loading, called, data}] = useLazyQuery(LOGIN_OK, {
-    variables: {input: {username: textUsername, keyword: textPassword}},
+    onCompleted: (laData) => {
+      if (laData.login) {
+        navigation.navigate('Main', {username: textUsername});
+      } else {
+        setError(true);
+      }
+    }
   });
 
   return (
@@ -47,18 +57,9 @@ const LoginScreen = ({navigation}) => {
           secureTextEntry={true}
         />
         <TextError errorText="Something went wrong." isError={haveError}/>
-        <TouchableOpacity style={styles.button} onPress={async () => {
+        <TouchableOpacity style={styles.button} onPress={() => {
             setError(false);
-            try {
-                await tryLogin();
-            } catch (error) {
-                setError(true);
-            }
-            if (data.login) {
-                navigation.navigate('Main', {username: textUsername});
-            } else {
-                setError(true);
-            }
+            tryLogin({variables: {input: {username: textUsername, keyword: textPassword}}});
         }}>
           <Text style={styles.textButton}>Login</Text>
         </TouchableOpacity>
