@@ -7,15 +7,31 @@
 
 > *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
 
+Neste apartado explicarase a idea e as tecnoloxías utilizadas no proxecto para dar unha descripción aproximada de como está desarrollado o traballo.
+
+#### Idea
+A idea é crear unha rede social onde a xente poida atopar a outras persoas coas que se encontraron en algún momento pero que, por circustancias da vida, non poideron conseguir o seu contacto. Esto faríase mediante o uso de publicacións. Estas dispoñen dunha pequena descripción da persoa que busca e da situación onde se coñeceron. As publicacíons monstraranse nunha pantalla onde estarán organizadas pola fecha na que se crearon. As publicacións póndense reaccionar enviando un mensaxe privado. As públicacións tamén se poden buscar escribindo as palabras claves que queiras atopar. Os post son visibles para todos os usuario e os usuarios son anónimos.
+
+#### Tecnoloxías
+Neste apartado enumerarei as tecnoloxías utilizadas. Se buscas unha descripción técnica podes ir ó apartado XXXXXXX.
+- Graphql
+- Express con apollo server
+- React native
+- Postgresql
+- Docker
+
 ## Instalación / Puesta en marcha
 
 > *TODO*: En este apartado describe con toda precisión y a poder ser con la mayor simplicidad/facilidad posible, cómo poner en marcha tu aplicación para probarla (en un ambiente local). Se valorará muy positivamente que este proceso sea lo más fácil posible, con una simple instrucción (p. e. un script de instalación).
 > Si tu proyecto es documental, realiza una especificación de cómo va a ser este proceso. En otras palabras, realiza este apartado independientemente que no haya implementación.
 
+Neste apartado darase as instruccións para a utilización da app.
 ## Uso
 
 > *TODO*: Es este apartado describe brevemente cómo se usará el software que proyectas. Si tiene una interfaz de terminal, describe aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
 > Si tu proyecto es documental, realiza una especificación de cómo planteas estas interfaces, con ejemplos incluso o esquemas de diseño. En otras palabras, realiza este apartado independientemente que no haya implementación.
+
+A utilización da applicación é sinxela. A primeira cousa que aparecerá frente o usuario será unha pantalla de login. A partir desta poderemos acceder a interfaz principal ou tamén poderemos crear unha nova conta. Se accedes a aplicación verás unha vista cunha barra superior para acceder a pantalla de creación de novas publicacións e a pantalla de mensaxes
 
 ## Sobre el autor
 
