@@ -7,7 +7,18 @@
 ## Deseño de interface de usuarios [mockups ou diagramas...]
 
 ![Login Screen](../img/LoginScreen.png)
+
 ![Home Screen](../img/HomeScreen.png)
+
+![Search Screen](../img/SearchScreen.png)
+
+![Profile Screen](../img/ProfileScreen.png)
+
+![Add Post Screen](../img/AddPostScreen.png)
+
+![Chats Screen](../img/ChatsScreen.png)
+
+![Chat Screen](../img/ChatScreen.png)
 
 ## Diagrama de Base de Datos
 
