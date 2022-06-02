@@ -1,30 +1,63 @@
 import React from 'react';
 
+import { 
+    useQuery,
+    gql
+  } from '@apollo/client';
+
 import {
     ScrollView,
     StyleSheet,
     View,
+    Text
 } from 'react-native';
 
 import Post from '../components/Post';
 import TopBar from '../components/TopBar';
 
-const posts = [{place:'A Coruña', date:'17/08/2033', body:'Xd tamos locos primos', likes: 123}, 
-{place: 'Santiago de Compostela', date:'01/01/2012', body:'Ajkd cddddfa dfj docker lucj', likes: 4444},
-{place:'Vigo', date:'22/05/2022', body:'Sskfakjñ jdhfjkj hadjkfj f jdkf nadsnf jf ajdfn ndf djf najdnfuadnan jnjkdvn cjnvjncj vnijsnfijvn sdjvn jsdnvj nsf', likes: 9913}, 
-{place: 'Pontevedra', date:'30/11/2025', body:'Pnjsdkjd jsdjfjjgh jfgjkd fjkghdfj ghdf ngjksjdhf gkdjfkjgdkjfg hdjkhfgjk dsfgjk fjgnjdsfgj dfkjg ndjskfng kjdnfkjdjfnvkjd jfv dkj', likes: 1},]
+const GET_POSTS = gql`
+  query {
+    location(idlocation: 1) {
+      namelocation
+      posts {
+        posttext
+        postdate
+        idpost
+      }
+    }
+  }
+`;
 
-const HomeScreen = () => {
-    return(
-        <View>
+const HomeScreen = (props) => {
+
+    const { loading, error, data } = useQuery(GET_POSTS);
+    const username = props.route.params.username;
+
+    if (loading) return (
+        <View style={homeStyles.container}>
             <TopBar/>
             <ScrollView
             style={homeStyles.scrollStyle}
                 contentInsetAdjustmentBehavior="automatic">
-                <Post place="Santiago de Compostela" date="14/02/2077" body="fa,smdklg kadsfj gksjdf gklsaj dgklajs dlkgj akdfj gkjasdf jjgklasjdf gkjadsf kgja kfkj gkadjf gkajdf klgj kdfj gkdjf kgjdfkl jglskd"/>
-                {posts.map((post) => (
-                    <Post key={post.date} place={post.place} date={post.date} body={post.body} likes={post.likes}/>
-                ))}
+                <Text style={homeStyles.text}>Loading...</Text>
+                <View style={homeStyles.inferiorBlock}></View>
+            </ScrollView>
+        </View>
+    );
+    const locationName = data.location.namelocation;
+
+    return(
+        <View style={homeStyles.container}>
+            <TopBar/>
+            <ScrollView
+            style={homeStyles.scrollStyle}
+                contentInsetAdjustmentBehavior="automatic">
+                {data.location.posts.map((post) => { 
+                    const date = new Date;
+                    date.setDate(post.postdate);
+                    return (
+                    <Post key={post.idpost} place={locationName} date={date.toDateString('en-US')} body={post.posttext} likes={0}/>
+                )})}
                 <View style={homeStyles.inferiorBlock}></View>
             </ScrollView>
         </View>
@@ -37,7 +70,16 @@ const homeStyles = StyleSheet.create({
       height: 115,
     },
     scrollStyle: {
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+    },
+    container: {
+        backgroundColor: 'black',
+        flex: 1
+    },
+    text: {
+        color: 'white',
+        fontSize: 25,
+        fontWeight: 'bold'
     }
 });
 

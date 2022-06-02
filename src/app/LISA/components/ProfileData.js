@@ -6,11 +6,11 @@ import {
     StyleSheet
 } from 'react-native'
 
-const ProfileData = () => {
+const ProfileData = (props) => {
     return(
         <View style={styles.container}>
             <View>
-                <Text style={styles.textName}>Alejandro Bello</Text>
+                <Text style={styles.textName}>{props.username}</Text>
             </View>
             <View style={styles.containerStatistics}>
                 <View style={styles.containerInfo}>

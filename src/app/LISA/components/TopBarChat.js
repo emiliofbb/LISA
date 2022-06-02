@@ -11,21 +11,18 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const TopBar = () => {
+const TopBarChat = (props) => {
 
   const navigation = useNavigation();
 
   return(
         <View style={topBarStyles.topBarContainer}>
+        <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('Messages')}>
+            <Ionicons name='caret-back' color='white' size={40}/>
+          </TouchableOpacity>
           <Text style={topBarStyles.topBarTitle}>
-              SALI
+              {props.username}
           </Text>
-          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('AddPost')}>
-            <Ionicons name='add' color='white' size={35}/>
-          </TouchableOpacity>
-          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('Messages')}>
-            <Ionicons name='paper-plane' color='white' size={35}/>
-          </TouchableOpacity>
       </View>
   );
 }
@@ -44,19 +41,19 @@ const topBarStyles = StyleSheet.create({
     },
     topBarTitle: {
       color: '#ffffff',
-      fontSize: 35,
+      fontSize: 25,
       fontFamily: 'lucida grande',
       paddingHorizontal: 15,
       paddingVertical: 5,
       fontWeight: '700',
-      flex: 5
+      textAlignVertical: 'center'
     },
     topBarButtons: {
-      flex: 1,
       width: 40,
       height: 40,
       marginVertical: 10,
+      marginLeft: 10
     },
 });
 
-export default TopBar;
+export default TopBarChat;
