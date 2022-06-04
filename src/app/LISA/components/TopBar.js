@@ -11,7 +11,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
-const TopBar = () => {
+const TopBar = ({username}) => {
 
   const navigation = useNavigation();
 
@@ -20,10 +20,10 @@ const TopBar = () => {
           <Text style={topBarStyles.topBarTitle}>
               SALI
           </Text>
-          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('AddPost')}>
+          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('AddPost', {username})}>
             <Ionicons name='add' color='white' size={35}/>
           </TouchableOpacity>
-          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('Messages')}>
+          <TouchableOpacity style={topBarStyles.topBarButtons} onPress={() => navigation.navigate('Messages', {username})}>
             <Ionicons name='paper-plane' color='white' size={35}/>
           </TouchableOpacity>
       </View>

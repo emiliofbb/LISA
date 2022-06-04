@@ -14,6 +14,8 @@ const Tab = createBottomTabNavigator();
 
 const AppMain = ({route, navigation}) => {
   
+  console.debug(route);
+
   const username = route.params.username;
 
   return (

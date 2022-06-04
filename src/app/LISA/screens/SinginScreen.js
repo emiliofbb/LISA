@@ -19,7 +19,6 @@ const ADD_USER = gql`
 `;
 
 const SinginScreen = ({navigation}) => {
-
   const [textUsername, setTextUsername] = React.useState(null);
   const [textPassword, setTextPassword] = React.useState(null);
   const [textError, setTextError] = React.useState(null);
@@ -49,20 +48,29 @@ const SinginScreen = ({navigation}) => {
         <TextError errorText={textError} isError={haveError} />
         <TouchableOpacity
           style={styles.button}
-          onPress={ async () => {
-              setError(false);
-              if (textPassword != null && textUsername != null && textPassword.localeCompare("") != 0 && textUsername.localeCompare("") != 0) {
-                await addUser({variables: {input: {username: textUsername, keyword: textPassword}}});
-                if (data.createUser) {
-                    navigation.navigate('Main', {username: textUsername});
-                } else {
-                    setError(true);
-                    setTextError("Can not create user.");
-                }
+          onPress={async () => {
+            setError(false);
+            if (
+              textPassword != null &&
+              textUsername != null &&
+              textPassword.localeCompare('') != 0 &&
+              textUsername.localeCompare('') != 0
+            ) {
+              await addUser({
+                variables: {
+                  input: {username: textUsername, keyword: textPassword},
+                },
+              });
+              if (data.createUser) {
+                navigation.navigate('Main', {username: textUsername});
               } else {
-                  setError(true);
-                    setTextError("Please introduce a valid password and username.");
+                setError(true);
+                setTextError('Can not create user.');
               }
+            } else {
+              setError(true);
+              setTextError('Please introduce a valid password and username.');
+            }
           }}>
           <Text style={styles.textButton}>Sign in</Text>
         </TouchableOpacity>

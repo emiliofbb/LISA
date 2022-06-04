@@ -48,7 +48,7 @@ const HomeScreen = (props) => {
 
     return(
         <View style={homeStyles.container}>
-            <TopBar/>
+            <TopBar username={username} />
             <ScrollView
             style={homeStyles.scrollStyle}
                 contentInsetAdjustmentBehavior="automatic">

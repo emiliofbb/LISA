@@ -96,9 +96,10 @@ const resolvers = {
         },
         createPost: async (_, args) => {
             var isInserted = true;
-            await db.oneOrNone("INSERT INTO POST(postDate, postText, idlocation, username) VALUES(${postdate}, ${posttext}, ${idlocation}, ${username})", args.input)
+            await db.oneOrNone("INSERT INTO POST(postDate, postText, idlocation, username) VALUES(CURRENT_DATE(), ${posttext}, ${idlocation}, ${username})", args.input)
             .catch((error) => {
                 isInserted = false;
+                console.log(error);
             });
             return isInserted;
         }

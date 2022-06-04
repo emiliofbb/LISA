@@ -53,7 +53,7 @@ const ProfileScreen = (props) => {
 
     return(
         <View style={profileStyles.container}>
-            <TopBar/>
+            <TopBar username={username}/>
             <ScrollView
             style={profileStyles.scrollStyle}
                 contentInsetAdjustmentBehavior="automatic">

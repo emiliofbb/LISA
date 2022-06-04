@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {useMutation, gql} from '@apollo/client';
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {
@@ -10,16 +12,31 @@ import {
   StyleSheet,
 } from 'react-native';
 
-const AddPostScreen = ({navigation}) => {
+const CREATE_POST = gql`
+  mutation CREATE_POST($input: PostInput!) {
+    createPost(input: $input)
+  }
+`;
+
+const AddPostScreen = ({route, navigation}) => {
   const [textExplanation, setTextExplanation] = React.useState(null);
+
+  const [createPost, {data}] = useMutation(CREATE_POST);
+
+  const username = route.params.username;
 
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.navigate('Main')}>
+          <Ionicons name="caret-back" color="white" size={40} />
+        </TouchableOpacity>
         <Text style={styles.text}>New Post</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Main', {})}>
+          onPress={() => navigation.navigate('Main', {username: username})}>
           <Ionicons name="add" color="black" size={40} />
         </TouchableOpacity>
       </View>
@@ -42,8 +59,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   topContainer: {
-      flexDirection: 'row',
-      alignItems: 'center'
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   textInput: {
     color: 'white',
@@ -60,7 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     padding: 5,
     alignItems: 'center',
-    marginHorizontal: 15
+    marginHorizontal: 15,
   },
   text: {
     color: 'white',
@@ -68,7 +85,13 @@ const styles = StyleSheet.create({
     fontSize: 50,
     fontWeight: 'bold',
     flex: 1,
-    marginLeft: 15
+    marginLeft: 15,
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    marginVertical: 10,
+    marginLeft: 10,
   },
 });
 
