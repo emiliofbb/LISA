@@ -18,12 +18,15 @@ const CREATE_POST = gql`
   }
 `;
 
+
 const AddPostScreen = ({route, navigation}) => {
   const [textExplanation, setTextExplanation] = React.useState(null);
 
-  const [createPost, {data}] = useMutation(CREATE_POST);
+  
 
   const username = route.params.username;
+
+  const [createPost, {data}] = useMutation(CREATE_POST);
 
   return (
     <View style={styles.container}>
@@ -36,7 +39,10 @@ const AddPostScreen = ({route, navigation}) => {
         <Text style={styles.text}>New Post</Text>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('Main', {username: username})}>
+          onPress={async () => {
+            await createPost({variables: {input: {postdate: new Date().toUTCString(), posttext: textExplanation, idlocation: 1, username: username}}});
+            navigation.navigate('Main', {username: username});
+          }}>
           <Ionicons name="add" color="black" size={40} />
         </TouchableOpacity>
       </View>
