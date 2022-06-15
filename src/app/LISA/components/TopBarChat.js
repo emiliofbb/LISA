@@ -6,24 +6,20 @@ import {useNavigation} from '@react-navigation/native';
 
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const TopBarChat = props => {
+const TopBarChat = (props) => {
   const navigation = useNavigation();
 
   return (
     <View style={topBarStyles.topBarContainer}>
       <TouchableOpacity
         style={topBarStyles.topBarButtons}
-        onPress={() => navigation.navigate('Messages')}>
+        onPress={() => navigation.navigate('Messages', {username: props.username})}>
         <Ionicons name="caret-back" color="white" size={40} />
       </TouchableOpacity>
-      <Text style={topBarStyles.topBarTitle}>{props.username}</Text>
+      <Text style={topBarStyles.topBarTitle}>{props.title}</Text>
     </View>
   );
 };
-
-function pressedButton1() {
-  console.debug('dsgasdg');
-}
 
 const topBarStyles = StyleSheet.create({
   topBarContainer: {

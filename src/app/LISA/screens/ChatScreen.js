@@ -17,7 +17,7 @@ import Message from '../components/Message';
 const ChatScreen = () => {
     return(
         <View style={styles.container}>
-            <TopBarChat username='Non é username'/>
+            <TopBarChat title='Chat' username='Non é username'/>
             <View style={styles.messagesContainer}>
                 <Message isMe={false}/>
             </View>

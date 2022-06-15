@@ -15,6 +15,13 @@ const typeDefs = gql`
     type Mutation {
         createUser(input: UserInput!): Boolean
         createPost(input: PostInput!): Boolean
+        like(input: LikeInput!): Boolean
+        unlike(input: LikeInput!): Boolean
+    }
+
+    input LikeInput {
+        idpost: ID!
+        username: String!
     }
 
     input searchedPostInput {
@@ -47,6 +54,7 @@ const typeDefs = gql`
         posttext: String!
         location: Location
         writer: User
+        likes: [User]
     }
 
     type User {

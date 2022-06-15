@@ -13,7 +13,7 @@ const Chat = (props) => {
     const navigation = useNavigation();
 
     return(
-        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Chat')}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Chat', {variables: {username: props.username}})}>
             <Text style={styles.textMsg}>{props.msgShort}</Text>
             <Text style={styles.textDate}>{props.date}</Text>
         </TouchableOpacity>

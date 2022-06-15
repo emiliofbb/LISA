@@ -33,7 +33,7 @@ const AddPostScreen = ({route, navigation}) => {
       <View style={styles.topContainer}>
         <TouchableOpacity
           style={styles.backButton}
-          onPress={() => navigation.navigate('Main')}>
+          onPress={() => navigation.navigate('Main', {username: username})}>
           <Ionicons name="caret-back" color="white" size={40} />
         </TouchableOpacity>
         <Text style={styles.text}>New Post</Text>

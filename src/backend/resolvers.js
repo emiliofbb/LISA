@@ -9,14 +9,16 @@ const resolvers = {
         user: (_, args) => {
             return db.one('SELECT username FROM USERS WHERE username=$1', args.username)
                 .then((userData) => {
-                    userData['posts'] = db.any('SELECT idPost, postDate, postText, idLocation FROM POST WHERE username=$1', args.username)
+                    userData['posts'] = db.any('SELECT idPost, postDate, postText, idLocation FROM POST WHERE username=$1 ORDER BY postDate DESC', args.username)
                     .then((data) => {
                         data.map((post) => {
+                            post.postdate = post.postdate.toUTCString();
                             post['location'] = db.one('SELECT idLocation, nameLocation, coords FROM GEO_LOCATION WHERE idLocation=$1', post.idlocation)
                             .then((localData) => {
                                 return localData;
                             });
                             delete post.idlocation;
+                            post['likes'] = db.any('SELECT username FROM LIKES WHERE idPost=$1', post.idpost).then((likers) => {return likers});
                         });
                         return data;
                     });
@@ -32,14 +34,16 @@ const resolvers = {
         location: (_, args) => {
             return db.one('SELECT idLocation, nameLocation, coords FROM GEO_LOCATION WHERE idLocation=$1', args.idlocation)
                 .then((localData) => {
-                    localData['posts'] = db.any('SELECT idPost, postDate, postText, username FROM POST WHERE idLocation=$1', localData.idlocation)
+                    localData['posts'] = db.any('SELECT idPost, postDate, postText, username FROM POST WHERE idLocation=$1 ORDER BY postDate DESC', localData.idlocation)
                     .then((data) => {
                         data.map((post) => {
+                            post.postdate = post.postdate.toUTCString();
                             post['writer'] = db.one('SELECT username FROM USERS WHERE username=$1', post.username)
                             .then((userData) => {
                                 delete post.username;
                                 return userData;
                             });;
+                            post['likes'] = db.any('SELECT username FROM LIKES WHERE idPost=$1', post.idpost).then((likers) => {return likers});
                         })
                         return data;
                     });
@@ -55,14 +59,16 @@ const resolvers = {
         searchedPost: (_, args) => {
             return db.one('SELECT idLocation, nameLocation, coords FROM GEO_LOCATION WHERE idLocation=$1', args.input.idlocation)
                 .then((localData) => {
-                    localData['posts'] = db.any('SELECT idPost, postDate, postText, username FROM POST WHERE idLocation=${idlocation} AND posttext ~ ${regex}', args.input)
+                    localData['posts'] = db.any('SELECT idPost, postDate, postText, username FROM POST WHERE idLocation=${idlocation} AND posttext ~ ${regex} ORDER BY postDate DESC', args.input)
                     .then((data) => {
                         data.map((post) => {
+                            post.postdate = post.postdate.toUTCString();
                             post['writer'] = db.one('SELECT username FROM USERS WHERE username=$1', post.username)
                             .then((userData) => {
                                 delete post.username;
                                 return userData;
                             });;
+                            post['likes'] = db.any('SELECT username FROM LIKES WHERE idPost=$1', post.idpost).then((likers) => {return likers});
                         })
                         return data;
                     });
@@ -100,10 +106,25 @@ const resolvers = {
             await db.oneOrNone("INSERT INTO POST(postDate, postText, idlocation, username) VALUES(${postdate}, ${posttext}, ${idlocation}, ${username})", args.input)
             .catch((error) => {
                 isInserted = false;
-                console.log(error);
             });
             return isInserted;
-        }
+        },
+        like: async (_, args) => {
+            var isInserted = true;
+            await db.oneOrNone("INSERT INTO LIKES(idPost, username) VALUES(${idpost}, ${username})", args.input)
+            .catch((error) => {
+                isInserted = false;
+            });
+            return isInserted;
+        },
+        unlike: async (_, args) => {
+            var isInserted = true;
+            await db.oneOrNone("DELETE FROM LIKES WHERE idPost=${idpost} AND username=${username}", args.input)
+            .catch((error) => {
+                isInserted = false;
+            });
+            return isInserted;
+        },
     }
 }
 

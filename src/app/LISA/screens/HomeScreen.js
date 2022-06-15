@@ -15,20 +15,25 @@ const GET_POSTS = gql`
         posttext
         postdate
         idpost
+        likes {
+          username
+        }
       }
     }
   }
 `;
 
-const wait = (timeout) => {
-    return new Promise(resolve => setTimeout(resolve, timeout));
-}
+const wait = timeout => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+};
 
 const HomeScreen = props => {
-
   const [refreshing, setRefreshing] = React.useState(false);
+
   const {loading, error, data} = useQuery(GET_POSTS, {variables: {refreshing}});
+
   const username = props.route.params.username;
+
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     wait(2000).then(() => setRefreshing(false));
@@ -46,6 +51,7 @@ const HomeScreen = props => {
         </ScrollView>
       </View>
     );
+
   const locationName = data.location.namelocation;
 
   return (
@@ -58,15 +64,16 @@ const HomeScreen = props => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
         {data.location.posts.map(post => {
-          const date = new Date();
-          date.setDate(post.postdate);
+          const date = new Date(post.postdate);
           return (
             <Post
               key={post.idpost}
+              postid={post.idpost}
               place={locationName}
-              date={date.toDateString('en-US')}
+              date={date.toLocaleDateString('en-US')}
               body={post.posttext}
-              likes={0}
+              likes={post.likes}
+              username={username}
             />
           );
         })}

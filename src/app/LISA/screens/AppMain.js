@@ -13,8 +13,6 @@ import ProfileScreen from './ProfileScreen';
 const Tab = createBottomTabNavigator();
 
 const AppMain = ({route, navigation}) => {
-  
-  console.debug(route);
 
   const username = route.params.username;
 

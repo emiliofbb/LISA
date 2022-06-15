@@ -15,7 +15,7 @@ const ProfileData = (props) => {
             <View style={styles.containerStatistics}>
                 <View style={styles.containerInfo}>
                     <Text style={styles.text}>Posts</Text>
-                    <Text style={styles.textInfo}>4</Text>
+                    <Text style={styles.textInfo}>{props.numPosts}</Text>
                 </View>
                 <View style={styles.containerInfo}>
                     <Text style={styles.text}>Likes</Text>
