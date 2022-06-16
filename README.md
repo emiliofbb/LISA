@@ -22,16 +22,24 @@ Neste apartado enumerarei as tecnoloxías utilizadas. Se buscas unha descripció
 
 Neste apartado darase as instruccións para a utilización da app.
 
-A única instalación necesaria na parte da app e descargar e instalar o .apk da aplicación.
+Descargar o repositorio e ter instalado [node](https://nodejs.org/es/download/) e requisito indispensable para poder correr o proxecto.
 
-No caso do servidor será necesario facer os seguintes pasos.
+####A instalación necesaria na parte da app é a seguinte:
 
-1. Descargar o repositorio e ter instalado [node](https://nodejs.org/es/download/)
-2. Usar unha consola e moverse a carpeta src/backend
-3. Executar npm install para descar os paquetes necesarios
-4. Executar node ./app.js
+1. Seguir a seguinte [guía](https://reactnative.dev/docs/environment-setup) para poder instalar aplicacións android a partir dun proxecto de react native
+2. Mirar a ip do ordenador onde o probes e modificar a uri no constructor do ApolloClient do arquivo src/app/LISA/App.js (Liña 25)
+3. Usar dúas consolas e moverse a src/app/LISA
+4. Executar npm install para descargar os paquetes necesarios
+5. Executar nunha das consolas npx react-native start
+6. Executar na segunda das consolas npx react-native run-android
 
-Por último, se non se conecta a Base de Datos, podes crear unha base de datos Postgres en calquera servicio cloud e cambiar os valores do arquivo .env polos teus. Os scripts de creación da BBDD atópanse na seguinte carpeta src/backend/DBScripts/creationScripts.sql.
+####No caso do servidor será necesario facer os seguintes pasos.
+
+1. Usar unha consola e moverse a carpeta src/backend
+2. Executar npm install para descargar os paquetes necesarios
+3. Executar node ./app.js
+
+Por último, se non se conecta a Base de Datos, podes crear unha base de datos Postgres en calquera servicio cloud e cambiar os valores do arquivo .env da parte do backend polos teus. Os scripts de creación da BBDD atópanse na seguinte carpeta src/backend/DBScripts/creationScripts.sql.
 
 ## Uso
 
