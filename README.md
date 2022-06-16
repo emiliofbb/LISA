@@ -1,6 +1,6 @@
 # Proyecto fin de ciclo
 
-Aqui falta o logo
+<img alt="Logo de SALI" src="doc/img/logo.jpg" height="250" width="250"/>
 
 ## Descripción
 
@@ -22,7 +22,16 @@ Neste apartado enumerarei as tecnoloxías utilizadas. Se buscas unha descripció
 
 Neste apartado darase as instruccións para a utilización da app.
 
-A única instalación necesaria e descargar e instalar o .apk da aplicación.
+A única instalación necesaria na parte da app e descargar e instalar o .apk da aplicación.
+
+No caso do servidor será necesario facer os seguintes pasos.
+
+1. Descargar o repositorio e ter instalado [node](https://nodejs.org/es/download/)
+2. Usar unha consola e moverse a carpeta src/backend
+3. Executar npm install para descar os paquetes necesarios
+4. Executar node ./app.js
+
+Por último, se non se conecta a Base de Datos, podes crear unha base de datos Postgres en calquera servicio cloud e cambiar os valores do arquivo .env polos teus. Os scripts de creación da BBDD atópanse na seguinte carpeta src/backend/DBScripts/creationScripts.sql.
 
 ## Uso
 
@@ -37,8 +46,7 @@ Contacto:
 
 ## Licencia
 
-> *TODO*: Es requisito INDISPENSABLE el licenciar explícitamente el proyecto software. Se recomienda licenciar con *GNU Free Documentation License Version 1.3*. Crear un fichero `LICENSE` en la raiz del repo, con tu fichero de licencia. Recuerda que si empleas una licencia de software libre estás autorizando la derivación de tu obra bajo la misma licencia que elijas, pudiendo dar continuidad, p. e. otro alumno, para continuar tu proyecto en otro curso.
-> Si tu proyecto es documental, recomendamos los términos de *GNU Free Documentation License Version 1.3*, crea igualmente el fichero `LICENSE`. Será especialmente valorado en este caso, la claridad de la especificación para que el proyecto pueda ser ejecutado partiendo de lo proyectado.
+A [licencia](LICENSE.txt) da aplicación é unha GNU Free Documentation License Version 1.3
 
 
 ## Índice
@@ -60,4 +68,4 @@ Non se permite a contribución con este proxecto debido a que se busca continuar
 
 ## Links
 
-> *TODO*: Enlaces externos y descipciones de estos enlaces que creas conveniente indicar aquí. Generalmente ya van a estar integrados con tu documentación, pero si requieres realizar un listado de ellos, este es el lugar.
+Enlace ó correo do creador do logo: simon180999@gmail.com
