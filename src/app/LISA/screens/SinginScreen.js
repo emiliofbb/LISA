@@ -29,7 +29,7 @@ const SinginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.text}>Logo</Text>
+        <Text style={styles.text}>Signin</Text>
         <TextInput
           style={styles.textInput}
           placeholder="Introduce your username"
