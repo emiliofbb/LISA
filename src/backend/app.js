@@ -14,26 +14,21 @@ app.get("/", (req, res) =>
 
 module.exports = app;
 
-try {
-  async function start() {
-    const apolloServer = new ApolloServer({
-      typeDefs,
-      resolvers,
-    });
-  
-    await apolloServer.start();
-  
-    apolloServer.applyMiddleware({ app });
-  
-    app.use("*", (req, res) => res.status(404).send("Not found"));
-  
-    app.listen(process.env.PORT, () => {
-      console.log("Graphql server listening at: " + process.env.PORT);
-    });
-  }
-} catch (error) {
-  console.log(error);
-}
+async function start() {
+  const apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
 
+  await apolloServer.start();
+
+  apolloServer.applyMiddleware({ app });
+
+  app.use("*", (req, res) => res.status(404).send("Not found"));
+
+  app.listen(process.env.PORT, () => {
+    console.log("Graphql server listening at: " + process.env.PORT);
+  });
+}
 
 start();
