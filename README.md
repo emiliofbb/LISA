@@ -56,7 +56,7 @@ Contacto:
 
 ## Guía de contribución
 
-Non se permite a contribución con este proxecto debido a que se busca continuar o desarrollo de maneira privada por parte dos desarrolladores iniciales.
+Non se permite a contribución con este proxecto debido a que se busca continuar o desarrollo de maneira privada por parte dos desarrolladores iniciales. En caso de querer continualo podedes realizar un fork do proxecto.
 
 ## Links
 
