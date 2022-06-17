@@ -1,8 +1,8 @@
 # FASE DE DESEÑO
 
-## Modelo conceptual do dominio da aplicación e/ou Diagrama de clases [usando UML, ConML, ou linguaxe semellante]
+## Casos de uso
 
-## Casos de uso [descritos en fichas e/ou mediante esquemas; deben incluír o(s) tipo(s) de usuario implicados en cada caso de uso]
+<img src="../img/casos_uso.png" alt="Casos de Uso"/>
 
 ## Deseño de interface de usuarios
 
