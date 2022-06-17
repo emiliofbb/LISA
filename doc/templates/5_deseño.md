@@ -25,3 +25,5 @@
 ![Entidade Relación](../img/E-R.png)
 
 ## Diagrama de compoñentes software que constitúen o produto e de despregue
+
+<img src="../img/componhentes.png" alt="Compoñentes"/>
