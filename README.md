@@ -59,9 +59,6 @@ A [licencia](LICENSE.txt) da aplicación é unha GNU Free Documentation License 
 
 ## Índice
 
-> *TODO*: Simplemente indexa ordenadamente todo tu proyecto.
-
-
 1. [Idea](doc/templates/Anteproxecto_Emilio_Fajin_Bargo.pdf)
 2. [Diseño](doc/templates/5_deseño.md)
 3. [Implantación](doc/templates/2_innovacion.md)
@@ -74,5 +71,7 @@ Non se permite a contribución con este proxecto debido a que se busca continuar
 ## Links
 
 Guía de instalación do cliente de react native: https://reactnative.dev/docs/environment-setup
+
 Instalador de node: https://nodejs.org/es/download/
+
 Enlace ó correo do creador do logo: simon180999@gmail.com
