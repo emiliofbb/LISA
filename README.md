@@ -76,4 +76,6 @@ Non se permite a contribución con este proxecto debido a que se busca continuar
 
 ## Links
 
+Guía de instalación do cliente de react native: https://reactnative.dev/docs/environment-setup
+Instalador de node: https://nodejs.org/es/download/
 Enlace ó correo do creador do logo: simon180999@gmail.com
