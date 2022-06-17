@@ -4,21 +4,21 @@
 
 ## Casos de uso [descritos en fichas e/ou mediante esquemas; deben incluír o(s) tipo(s) de usuario implicados en cada caso de uso]
 
-## Deseño de interface de usuarios [mockups ou diagramas...]
+## Deseño de interface de usuarios
 
-![Login Screen](../img/LoginScreen.png)
+<img src="../img/LoginScreen.png" alt="Login Screen" width="25%" heigth="25%"/>
 
-![Home Screen](../img/HomeScreen.png)
+<img src="../img/HomeScreen.png" alt="Home Screen" width="25%" heigth="25%"/>
 
-![Search Screen](../img/SearchScreen.png)
+<img src="../img/SearchScreen.png" alt="Search Screen" width="25%" heigth="25%"/>
 
-![Profile Screen](../img/ProfileScreen.png)
+<img src="../img/ProfileScreen.png" alt="Profile Screen" width="25%" heigth="25%"/>
 
-![Add Post Screen](../img/AddPostScreen.png)
+<img src="../img/AddPostScreen.png" alt="Login Screen" width="25%" heigth="25%"/>
 
-![Chats Screen](../img/ChatsScreen.png)
+<img src="../img/ChatsScreen.png" alt="Login Screen" width="25%" heigth="25%"/>
 
-![Chat Screen](../img/ChatScreen.png)
+<img src="../img/ChatScreen.png" alt="Login Screen" width="25%" heigth="25%"/>
 
 ## Diagrama de Base de Datos
 
