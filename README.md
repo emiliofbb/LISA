@@ -24,7 +24,7 @@ Neste apartado darase as instruccións para a utilización da app.
 
 Descargar o repositorio e ter instalado [node](https://nodejs.org/es/download/) e requisito indispensable para poder correr o proxecto.
 
-####A instalación necesaria na parte da app é a seguinte:
+#### A instalación necesaria na parte da app é a seguinte:
 
 1. Seguir a seguinte [guía](https://reactnative.dev/docs/environment-setup) para poder instalar aplicacións android a partir dun proxecto de react native
 2. Mirar a ip do ordenador onde o probes e modificar a uri no constructor do ApolloClient do arquivo src/app/LISA/App.js (Liña 25)
@@ -33,7 +33,7 @@ Descargar o repositorio e ter instalado [node](https://nodejs.org/es/download/) 
 5. Executar nunha das consolas npx react-native start
 6. Executar na segunda das consolas npx react-native run-android
 
-####No caso do servidor será necesario facer os seguintes pasos.
+#### No caso do servidor será necesario facer os seguintes pasos.
 
 1. Usar unha consola e moverse a carpeta src/backend
 2. Executar npm install para descargar os paquetes necesarios
