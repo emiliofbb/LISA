@@ -1,37 +1,29 @@
-# FASE DE IMPLANTACIÓN
+# MELLORAS
 
-## Manual técnico
+## As melloras futuras a curto prazo son as seguintes:
 
-### Información relativa á instalación
+#### 1. Engadir mensaxes privados entre usuarios
 
-* Requirimentos de hardware, servidores na nube, etc.
-* Software necesario (S.O. válidos, software externo co que interaciona a nosa aplicación, etc.).
-* Configuración inicial seguridade: devasa, control usuarios, rede.
-* Carga inicial de datos na base de datos. Migración de datos xa existentes noutros formatos.
-* Usuarios do sistema. Usuarios da aplicación.
-* Diagrama final de despregue (se hai variacións con respecto ó realizado na anterior fase).
+Esto permitirá os usuarios poder poñerse en contacto entre si fora da app. O fin e o cabo, o obxectivo final desta rede social é que a xente usea para contactar a alguen e continuar ca conversación por outro medio.
 
-### Información relativa á administración do sistema, é dicir, tarefas que se deberán realizar unha vez que o sistema estea funcionando, como por exemplo
+#### 2. Crear un container de docker para a parte de servidor
 
-* Copias de seguridade do sistema.
-* Copias de seguridade da base de datos.
-* Xestión de usuarios.
-* Xestión seguridade.
-* Xestión de incidencias, que poden ser de dous tipos: de sistema (accesos non autorizados á BD, etc) ou de fallos no software.
+Isto permite unha mellor xestión e da unha maior resistencia a todos os servicios básicos da aplicación
 
-### Información relativa ó mantemento do sistema
+#### 3. Engadir os likes
 
-* Corrixir erros.
-* Engadir novas funcionalidades.
-* Adaptación por actualizacións de software e/ou hardware.
+Engadir os likes pódenos permitir a creación a futuro de algoritmos de búsqueda que permitan unha experiencia de usuario de calidade. Esto permitirá conseguir que os usuarios elixan a nosa aplicación sobre outras do mesmo tipo.
 
-## Xestión de incidencias
+#### 4. Xerar o .apk e o .ipa para distribuir a aplicación en Android e iOS
 
-Poden ser incidencias de dous tipos: de sistema (accesos non autorizados á BD, etc) ou de fallos no software.
+Nesta mellora non hai moito que decir. É preciso para distribución da aplicación. De momento o seu uso está reservado á utilización de simuladores e utilizando consolas para cargar a aplicación.
 
-## Protección de datos de carácter persoal
+## As melloras futuras a longo prazo son as seguintes:
 
-## Manual de usuario
+#### 1. Un algoritmo que teña en conta os likes a hora de mostrar as publicacións
 
-* Indicar se será necesario formar ós usuarios. En caso afirmativo planificar.
-* Manual de usuario, FAQ ou outro xeito que sexa o máis adecuado para que os usuarios saiban usar a nosa aplicación informática.
+Esta mellora permitirá, como dixen con anterioridade, unha maior experiencia de usuario.
+
+#### 2. Contar cun diseñador que apoie no desarrollo da parte gráfica
+
+Esta, claramente, é unha mellora que vai dirixidada ó longo prazo. Esto ben dado porque a app quizais non sexa a máis fermosa pero o importante de momento son as melloras doutras funcionalidades básicas que son indispensables para o uso da mesma.
