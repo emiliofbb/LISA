@@ -61,8 +61,8 @@ A [licencia](LICENSE.txt) da aplicación é unha GNU Free Documentation License 
 
 1. [Idea](doc/templates/Anteproxecto_Emilio_Fajin_Bargo.pdf)
 2. [Diseño](doc/templates/5_deseño.md)
-3. [Implantación](doc/templates/2_innovacion.md)
-4. [Implantación](doc/templates/6_mejoras.md)
+3. [Innovación](doc/templates/2_innovacion.md)
+4. [Melloras](doc/templates/6_mejoras.md)
 
 ## Guía de contribución
 
